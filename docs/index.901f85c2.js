@@ -521,8 +521,6 @@ parcelHelpers.export(exports, "Game", ()=>Game
 var _pixiJs = require("pixi.js");
 var _backgroundPng = require("./images/background.png");
 var _backgroundPngDefault = parcelHelpers.interopDefault(_backgroundPng);
-var _boer1Png = require("./images/boer1.png");
-var _boer1PngDefault = parcelHelpers.interopDefault(_boer1Png);
 var _camera = require("./camera");
 class Game {
     pixiWidth = 800;
@@ -535,7 +533,7 @@ class Game {
         this.pixi.stage.interactive = true;
         this.pixi.stage.hitArea = this.pixi.renderer.screen;
         document.body.appendChild(this.pixi.view);
-        this.pixi.loader.add('backgroundTexture', _backgroundPngDefault.default).add('boer1Texture', _boer1PngDefault.default);
+        this.pixi.loader.add('backgroundTexture', _backgroundPngDefault.default);
         this.pixi.loader.load(()=>this.doneLoading()
         );
     }
@@ -551,7 +549,7 @@ class Game {
 }
 new Game();
 
-},{"pixi.js":"dsYej","./images/background.png":"fwQMR","./images/boer1.png":"4k9SU","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./camera":"i82g0"}],"dsYej":[function(require,module,exports) {
+},{"pixi.js":"dsYej","./images/background.png":"fwQMR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./camera":"i82g0"}],"dsYej":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "utils", ()=>_utils
@@ -37085,10 +37083,7 @@ exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
-},{}],"4k9SU":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('emE5o') + "boer1.7d0678a7.png" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"i82g0":[function(require,module,exports) {
+},{}],"i82g0":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Camera", ()=>Camera
@@ -37116,7 +37111,7 @@ class Camera {
         let renderer = this.pixi.renderer;
         let extract = new _pixiJs.Extract(renderer);
         let canvasPixels = extract.base64(this.pixi.stage);
-        // console.log(canvasPixels)
+        console.log(canvasPixels);
         let sprite = _pixiJs.Sprite.from(canvasPixels);
         sprite.x = 100;
         sprite.y = 100;

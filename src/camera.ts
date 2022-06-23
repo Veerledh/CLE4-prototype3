@@ -36,7 +36,7 @@ export class Camera {
         let renderer: PIXI.Renderer = this.pixi.renderer as PIXI.Renderer
         let extract = new PIXI.Extract(renderer)
         let canvasPixels = extract.base64(this.pixi.stage)
-        // console.log(canvasPixels)
+        console.log(canvasPixels)
 
         let sprite = PIXI.Sprite.from(canvasPixels)
         sprite.x = 100

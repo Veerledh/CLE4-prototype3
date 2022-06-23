@@ -1,7 +1,5 @@
 import * as PIXI from 'pixi.js'
 import backgroundImage from "./images/background.png"
-import boer1Image from "./images/boer1.png"
-import tekstbox1Image from "./images/tekstbox1.png"
 import { Camera } from "./camera";
 
 export class Game{
@@ -22,7 +20,6 @@ export class Game{
         
         this.pixi.loader
             .add('backgroundTexture',backgroundImage)
-            .add('boer1Texture', boer1Image)
             
         this.pixi.loader.load(()=>this.doneLoading());
 
